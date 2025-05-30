@@ -71,15 +71,7 @@ namespace ILMergeGUI
 
         private void AboutLabel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "This application utilizes ILMerge to consolidate .NET assemblies into a single executable.\n\n" +
-                "ILMerge is developed by Microsoft Research and is available under the MIT License.\n" +
-                "For more information, visit: https://github.com/dotnet/ILMerge",
-                "About This Application",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
-
+            client.AboutApp();
         }
     }
 }
