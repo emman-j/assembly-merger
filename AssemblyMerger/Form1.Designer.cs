@@ -79,6 +79,7 @@
             this.zeroPEKind = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.ClearConsoleBtn = new System.Windows.Forms.Button();
+            this.AboutLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -233,6 +234,7 @@
             this.checkBox8.Size = new System.Drawing.Size(15, 14);
             this.checkBox8.TabIndex = 26;
             this.checkBox8.UseVisualStyleBackColor = true;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -601,11 +603,24 @@
             this.ClearConsoleBtn.UseVisualStyleBackColor = true;
             this.ClearConsoleBtn.Click += new System.EventHandler(this.ClearConsoleBtn_Click);
             // 
+            // AboutLabel
+            // 
+            this.AboutLabel.AutoSize = true;
+            this.AboutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.AboutLabel.Location = new System.Drawing.Point(420, 456);
+            this.AboutLabel.Name = "AboutLabel";
+            this.AboutLabel.Size = new System.Drawing.Size(151, 16);
+            this.AboutLabel.TabIndex = 10;
+            this.AboutLabel.Text = "About Assembly Merger";
+            this.AboutLabel.Click += new System.EventHandler(this.AboutLabel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 486);
+            this.Controls.Add(this.AboutLabel);
             this.Controls.Add(this.ClearConsoleBtn);
             this.Controls.Add(this.zeroPEKind);
             this.Controls.Add(this.consoleTB);
@@ -686,6 +701,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button OpenOutputFolder;
         private System.Windows.Forms.Button ClearConsoleBtn;
+        private System.Windows.Forms.Label AboutLabel;
     }
 }
 
