@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ILMergeGUI.Library;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,36 +45,42 @@ namespace ILMergeGUI
             client = new Client(selectedFileControl);
             client.ConsoleListener.RedirectConsoleToTextBox(consoleTB);
 
+            SetDataBindings();
         }
 
-                if (dialogresult == DialogResult.No)
-                {
-                    return;
-                }
+        private void SetDataBindings()
+        {
+            SelectedFilesListbox.DataSource = client.bindingList;
+            SelectedFilesListbox.DisplayMember = "Key";
+            ILMergerPathTB.DataBindings.Add("Text", client.ILMerge, nameof(client.ILMerge.ILMergePath), true, DataSourceUpdateMode.OnPropertyChanged);
+            outputFilePath.DataBindings.Add("Text", client.ILMerge, nameof(client.ILMerge.OutputPath), true, DataSourceUpdateMode.OnPropertyChanged);
+            outputFilename.DataBindings.Add("Text", client.ILMerge, nameof(client.ILMerge.OutputFilename), true, DataSourceUpdateMode.OnPropertyChanged);
+            zeroPEKind.DataBindings.Add("Checked", client.ILMerge, nameof(client.ILMerge.ZeroPEKind), true, DataSourceUpdateMode.OnPropertyChanged);
+        }
 
         private void Merge_Click(object sender, EventArgs e)
-            {
+        {
             client.Merge();
-            }
+        }
         private void SelectOutPath_Click(object sender, EventArgs e)
         {
             client.SelectOutPath();
-                }
+        }
         private void selectILMergerExe_Click(object sender, EventArgs e)
         {
             client.SearchILMergeExe();
-            }
+        }
         private void OpenOutputFolder_Click(object sender, EventArgs e)
         {
             client.OpenOutputFolder();
-            }
+        }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-            {
+        {
             Application.Exit(); 
-            }
+        }
 
         private void ClearConsoleBtn_Click(object sender, EventArgs e)
-            {
+        {
             consoleTB.Clear();
         }
     }
