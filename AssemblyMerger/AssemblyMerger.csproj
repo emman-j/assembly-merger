@@ -64,6 +64,10 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Library\Client.cs" />
+    <Compile Include="Library\Service\ILMergeService.cs" />
+    <Compile Include="Library\Service\INotifyBase.cs" />
+    <Compile Include="Library\Service\TextBoxListener.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

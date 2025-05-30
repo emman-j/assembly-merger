@@ -71,13 +71,15 @@
             this.outputFilename = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.OpenOutputFolder = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.selectILMergerExe = new System.Windows.Forms.Button();
             this.ILMergerPathTB = new System.Windows.Forms.TextBox();
             this.consoleTB = new System.Windows.Forms.TextBox();
             this.zeroPEKind = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.OpenOutputFolder = new System.Windows.Forms.Button();
+            this.ClearConsoleBtn = new System.Windows.Forms.Button();
+            this.AboutLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -176,7 +178,6 @@
             this.checkBox10.Size = new System.Drawing.Size(15, 14);
             this.checkBox10.TabIndex = 32;
             this.checkBox10.UseVisualStyleBackColor = true;
-            this.checkBox10.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // label3
             // 
@@ -196,7 +197,6 @@
             this.checkBox9.Size = new System.Drawing.Size(15, 14);
             this.checkBox9.TabIndex = 29;
             this.checkBox9.UseVisualStyleBackColor = true;
-            this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // label4
             // 
@@ -234,7 +234,6 @@
             this.checkBox8.Size = new System.Drawing.Size(15, 14);
             this.checkBox8.TabIndex = 26;
             this.checkBox8.UseVisualStyleBackColor = true;
-            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // label6
             // 
@@ -272,7 +271,6 @@
             this.checkBox7.Size = new System.Drawing.Size(15, 14);
             this.checkBox7.TabIndex = 23;
             this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // label8
             // 
@@ -310,7 +308,6 @@
             this.checkBox6.Size = new System.Drawing.Size(15, 14);
             this.checkBox6.TabIndex = 20;
             this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // label12
             // 
@@ -348,7 +345,6 @@
             this.checkBox5.Size = new System.Drawing.Size(15, 14);
             this.checkBox5.TabIndex = 17;
             this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // textBox1
             // 
@@ -377,7 +373,6 @@
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 1;
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox4
             // 
@@ -388,7 +383,6 @@
             this.checkBox4.Size = new System.Drawing.Size(15, 14);
             this.checkBox4.TabIndex = 14;
             this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // textBox3
             // 
@@ -417,7 +411,6 @@
             this.checkBox2.Size = new System.Drawing.Size(15, 14);
             this.checkBox2.TabIndex = 8;
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -428,7 +421,6 @@
             this.checkBox3.Size = new System.Drawing.Size(15, 14);
             this.checkBox3.TabIndex = 11;
             this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // textBox4
             // 
@@ -501,7 +493,6 @@
             this.outputFilename.Size = new System.Drawing.Size(275, 22);
             this.outputFilename.TabIndex = 4;
             this.outputFilename.Text = "CombinedLibrary";
-            this.outputFilename.TextChanged += new System.EventHandler(this.outputFilename_TextChanged);
             // 
             // label1
             // 
@@ -526,6 +517,16 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Output Configuration";
+            // 
+            // OpenOutputFolder
+            // 
+            this.OpenOutputFolder.Location = new System.Drawing.Point(144, 77);
+            this.OpenOutputFolder.Name = "OpenOutputFolder";
+            this.OpenOutputFolder.Size = new System.Drawing.Size(102, 24);
+            this.OpenOutputFolder.TabIndex = 6;
+            this.OpenOutputFolder.Text = "Open Folder";
+            this.OpenOutputFolder.UseVisualStyleBackColor = true;
+            this.OpenOutputFolder.Click += new System.EventHandler(this.OpenOutputFolder_Click);
             // 
             // groupBox3
             // 
@@ -572,7 +573,7 @@
             this.consoleTB.Name = "consoleTB";
             this.consoleTB.ReadOnly = true;
             this.consoleTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.consoleTB.Size = new System.Drawing.Size(443, 369);
+            this.consoleTB.Size = new System.Drawing.Size(443, 343);
             this.consoleTB.TabIndex = 8;
             this.consoleTB.WordWrap = false;
             // 
@@ -591,21 +592,36 @@
         "ies that contain unmanaged code");
             this.zeroPEKind.UseVisualStyleBackColor = true;
             // 
-            // OpenOutputFolder
+            // ClearConsoleBtn
             // 
-            this.OpenOutputFolder.Location = new System.Drawing.Point(144, 77);
-            this.OpenOutputFolder.Name = "OpenOutputFolder";
-            this.OpenOutputFolder.Size = new System.Drawing.Size(102, 24);
-            this.OpenOutputFolder.TabIndex = 6;
-            this.OpenOutputFolder.Text = "Open Folder";
-            this.OpenOutputFolder.UseVisualStyleBackColor = true;
-            this.OpenOutputFolder.Click += new System.EventHandler(this.OpenOutputFolder_Click);
+            this.ClearConsoleBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClearConsoleBtn.Location = new System.Drawing.Point(763, 452);
+            this.ClearConsoleBtn.Name = "ClearConsoleBtn";
+            this.ClearConsoleBtn.Size = new System.Drawing.Size(101, 24);
+            this.ClearConsoleBtn.TabIndex = 7;
+            this.ClearConsoleBtn.Text = "Clear Console";
+            this.ClearConsoleBtn.UseVisualStyleBackColor = true;
+            this.ClearConsoleBtn.Click += new System.EventHandler(this.ClearConsoleBtn_Click);
+            // 
+            // AboutLabel
+            // 
+            this.AboutLabel.AutoSize = true;
+            this.AboutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.AboutLabel.Location = new System.Drawing.Point(420, 456);
+            this.AboutLabel.Name = "AboutLabel";
+            this.AboutLabel.Size = new System.Drawing.Size(151, 16);
+            this.AboutLabel.TabIndex = 10;
+            this.AboutLabel.Text = "About Assembly Merger";
+            this.AboutLabel.Click += new System.EventHandler(this.AboutLabel_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 486);
+            this.Controls.Add(this.AboutLabel);
+            this.Controls.Add(this.ClearConsoleBtn);
             this.Controls.Add(this.zeroPEKind);
             this.Controls.Add(this.consoleTB);
             this.Controls.Add(this.groupBox3);
@@ -684,6 +700,8 @@
         private System.Windows.Forms.CheckBox zeroPEKind;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button OpenOutputFolder;
+        private System.Windows.Forms.Button ClearConsoleBtn;
+        private System.Windows.Forms.Label AboutLabel;
     }
 }
 
