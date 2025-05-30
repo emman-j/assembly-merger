@@ -73,7 +73,7 @@ Leveraging [ILMerge](https://github.com/dotnet/ILMerge), this tool provides a us
 
 *Figure: Main interface showcasing assembly selection and merge operations.*
 
-![Assembly Merger Interface](error.png)
+![Assembly Merger Interface](Images/error.png)
 *Figure: Error reporting for easy debugging.*
 
 
