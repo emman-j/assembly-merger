@@ -11,7 +11,7 @@ Leveraging [ILMerge](https://github.com/dotnet/ILMerge), this tool provides a us
 
 - **Graphical User Interface**: Intuitive design for easy navigation and operation.
 - **Customizable Output**: Specify output paths and filenames effortlessly.
- **Auto-Detection of ILMerge Executable**: Automatically resolves and uses ILMerge.exe from the local application directory.
+- **Auto-Detection of ILMerge Executable**: Automatically resolves and uses ILMerge.exe from the local application directory.
 - **Default Output Directory**: Automatically sets to `ExecutableBaseDirectory\output` for organized storage.
 - **Real-time Logging**: Monitor merge operations through an integrated console.
 - **Error Handling**: Provides feedback on merge success or failure.
